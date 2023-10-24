@@ -38,6 +38,16 @@ VICTRON_CHARACTERISTICS = {
         unit='%',
         func=lambda b: int.from_bytes(b, 'little', signed=False) * .01,
         na_bytes=b'\xff\xff',
+    ),
+    "voltage2": dict(
+        uuid="6597ed7d-4bda-4c1e-af4b-551c4cf74769",
+        unit='V',
+        func=lambda b: int.from_bytes(b, 'little', signed=True) * .01
+    ),
+    "remaining": dict(
+        uuid="65970ffe-4bda-4c1e-af4b-551c4cf74769",
+        unit='h',
+        func=lambda b: int.from_bytes(b, 'little', signed=True) / 60
     )
 }
 

@@ -28,6 +28,7 @@ class BmsSample:
     def __init__(self, voltage, current, power=math.nan,
                  charge=math.nan, capacity=math.nan, cycle_capacity=math.nan,
                  num_cycles=math.nan, soc=math.nan,
+                 voltage2, remaining,
                  balance_current=math.nan,
                  temperatures: List[float] = None,
                  mos_temperature:float=math.nan,
@@ -42,6 +43,8 @@ class BmsSample:
         :param cycle_capacity: Total absolute charge meter (coulomb counter). Increases during charge and discharge. Can tell you the battery cycles (num_cycles = cycle_capacity/2/capacity). A better name would be cycle_charge. This is not well defined.
         :param num_cycles:
         :param soc: in % (0-100)
+        :param voltage2: Auxiliar battery or midpoint voltage
+        :param remaining: Battery remaining time (h)
         :param balance_current:
         :param temperatures:
         :param mos_temperature:
@@ -63,6 +66,8 @@ class BmsSample:
         self.charge: float = charge
         self.capacity: float = capacity
         self.soc: float = soc
+        self.voltage2: float = voltage2 or 0
+        self.remaining: float = remaining or 0
         self.cycle_capacity: float = cycle_capacity
         self.num_cycles: float = num_cycles
         self.temperatures = temperatures
@@ -88,7 +93,7 @@ class BmsSample:
 
     def __str__(self):
         # noinspection PyStringFormat
-        return 'BmsSampl(%(soc).1f%%,U=%(voltage).1fV,I=%(current).2fA,P=%(power).0fW,Q=%(charge).1fAh/%(capacity).0f,mos=%(mos_temperature).1f°C)' % self.values()
+        return 'BmsSampl(%(soc).1f%%,U=%(voltage).1fV,M=%(voltage2).1fV,I=%(current).2fA,P=%(power).0fW,Q=%(charge).1fAh/%(capacity).0f,R=%(remaining).1fh,mos=%(mos_temperature).1f°C)' % self.values()
 
     def invert_current(self):
         return self.multiply_current(-1)
