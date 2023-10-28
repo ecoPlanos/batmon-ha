@@ -1,5 +1,8 @@
 # Changelog
 
+## [0.0.73] - 2023-10-28
+* Added mid voltage
+
 ## [0.0.72] - 2023-10-19
 * Fix JK BLE characteristic handles
 * Remove `influxdb` requirement and install if needed
