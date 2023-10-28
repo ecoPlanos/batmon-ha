@@ -25,11 +25,10 @@ class DeviceInfo:
 
 
 class BmsSample:
-    def __init__(self, voltage, current, power=math.nan,
+    def __init__(self, voltage, current, voltage2, remaining,
                  charge=math.nan, capacity=math.nan, cycle_capacity=math.nan,
                  num_cycles=math.nan, soc=math.nan,
-                 voltage2, remaining,
-                 balance_current=math.nan,
+                 balance_current=math.nan, power=math.nan,
                  temperatures: List[float] = None,
                  mos_temperature:float=math.nan,
                  switches: Optional[Dict[str, bool]] = None,
