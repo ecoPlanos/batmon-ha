@@ -38,8 +38,8 @@ I tested the add-on on a Raspberry Pi 4 using Home Assistant Operating System.
 ## Installation
 
 * Go to your Home Assistant Add-on store and add this
-  repository: [`https://github.com/fl4p/home-assistant-addons`](https://github.com/fl4p/home-assistant-addons)
-  [![Open your Home Assistant instance and show the dashboard of a Supervisor add-on.](https://my.home-assistant.io/badges/supervisor_addon.svg)](https://my.home-assistant.io/redirect/supervisor_addon/?addon=2af0a32d_batmon&repository_url=https%3A%2F%2Fgithub.com%2Ffl4p%2Fhome-assistant-addons)
+  repository: [`https://github.com/ecoPlanos/batmon-ha`](https://github.com/ecoPlanos/batmon-ha)
+  [![Open your Home Assistant instance and show the dashboard of a Supervisor add-on.](https://my.home-assistant.io/badges/supervisor_addon.svg)](https://my.home-assistant.io/redirect/supervisor_addon/?addon=2af0a32d_batmon&repository_url=https%3A%2F%2Fgithub.com%2FecoPlanos%2Fbatmon-ha)
 * Install Batmon add-on
 * Install, configure and start Mosquito MQTT broker (don't forget to configure the MQTT integration)
 
@@ -114,7 +114,7 @@ peaks, leading to even greater error.
 
 * Power cycle (turn off and on) the BMS Bluetooth hardware/dongle (or BMS)
 * Enable `bt_power_cycle`. If it doesn't work, manually power cycle Bluetooth on the host you are running batmon
-  on [#91](https://github.com/fl4p/batmon-ha/discussions/91).
+  on [#91](https://github.com/ecoPlanos/batmon-ha/discussions/91).
 * When experiencing unstable connection enable `keep_alive`
 * Enable `verbose_log` and check the logs. If that is too noisy set `debug: true` in the BMS configuration as described
   above
@@ -123,25 +123,25 @@ peaks, leading to even greater error.
 * After a long-lasting bluetooth connection is lost both Daly and JBD dongles occasionally refuse to accept new
   connections and disappear from bluetooth discovery. Remove wires from the dongle and reconnect for a restart.
 * Some users reported unstable Bluetooth connection with Raspberry Pi 4 onboard bluetooth hardware and WiFi enabled. It
-  appears that disabling WiFi helps. ([#42](https://github.com/fl4p/batmon-ha/issues/42))
+  appears that disabling WiFi helps. ([#42](https://github.com/ecoPlanos/batmon-ha/issues/42))
 * Cheap inverters might cause heavy EMI (electromagnetic interference). Turn them off or keep them away from the
   bluetooth
   hardware
 * Either bleak or bluetooth support in HA docker seems unstable. see related
-  issues [106](https://github.com/fl4p/batmon-ha/issues/106) [109](https://github.com/fl4p/batmon-ha/issues/109)
+  issues [106](https://github.com/ecoPlanos/batmon-ha/issues/106) [109](https://github.com/ecoPlanos/batmon-ha/issues/109)
 * Try another bluetooth hardware. Note you can choose the adapter with `adapter` parameter for each BMS individually
 * [doc/Downgrade.md](doc/Downgrade.md) to ab earlier version
 
 ## TODO
 
-* Implement daly2 [#33](https://github.com/fl4p/batmon-ha/issues/33)
+* Implement daly2 [#33](https://github.com/ecoPlanos/batmon-ha/issues/33)
 * Port to MicroPython for MCU (ESP32 etc.)
 * make this a custom
   integration? [home-assistant-bms-tools-integration](https://github.com/ElD4n1/home-assistant-bms-tools-integration)
 * use the new [Bluetooth integration since HA 2022.8 ](https://www.home-assistant.io/integrations/bluetooth/) ?
 * Implement BMS data push (JK)
 * Read device bt info [see](https://www.bluetooth.com/specifications/specs/device-information-service-1-1/)
-* Implement RS485 [#22](https://github.com/fl4p/batmon-ha/issues/22)
+* Implement RS485 [#22](https://github.com/ecoPlanos/batmon-ha/issues/22)
 * Implement old JK04?
 * web interface (export, import bms meter data)
 
