@@ -153,9 +153,9 @@ sample_desc = {
         "unit_of_measurement": "V",
         "precision": 4,
         "icon": "meter-electric"},
-    "soc/total_voltage2": {
+    "soc/aux_voltage": {
         "field": "voltage2",
-        "device_class": "voltage2",
+        "device_class": "voltage",
         "state_class": "measurement",
         "unit_of_measurement": "V",
         "precision": 4,
@@ -198,8 +198,7 @@ sample_desc = {
         "field": "capacity",
         "device_class": None,
         "state_class": None,
-        "unit_of_measurement": "Ah"
-    },
+        "unit_of_measurement": "Ah"},
     "soc/cycle_capacity": {
         "field": "cycle_capacity",
         "device_class": None,
