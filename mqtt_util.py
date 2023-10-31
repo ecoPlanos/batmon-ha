@@ -153,6 +153,13 @@ sample_desc = {
         "unit_of_measurement": "V",
         "precision": 4,
         "icon": "meter-electric"},
+    "soc/total_voltage2": {
+        "field": "voltage2",
+        "device_class": "voltage2",
+        "state_class": "measurement",
+        "unit_of_measurement": "V",
+        "precision": 4,
+        "icon": "meter-electric"},
     "soc/current": {
         "field": "current",
         "device_class": "current",
@@ -172,6 +179,13 @@ sample_desc = {
         "state_class": None,
         "unit_of_measurement": "%",
         "precision": 4,
+        "icon": "battery"},
+    "soc/soc_time": {
+        "field": "remaining",
+        "device_class": "battery",
+        "state_class": None,
+        "unit_of_measurement": "h",
+        "precision": 2,
         "icon": "battery"},
     "soc/power": {
         "field": "power",
